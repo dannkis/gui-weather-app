@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Outlet, Link } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
 import logo_main from "../../media/logos/logo_main.png";
 import "./nav.scss";
 
