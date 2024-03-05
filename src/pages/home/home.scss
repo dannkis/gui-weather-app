@@ -1,0 +1,36 @@
+.bg-image-1{
+    background-image: url('../../media/images/image-home-section-1.png');
+    background-size: cover;
+}
+
+.basic-weather-info, .weather-insight{
+    background-color: rgba(61, 90, 108, 0.70);
+    border: 0.2em solid rgba(61, 90, 108, 0.20);
+}
+
+.basic-weather-info{
+    min-width: 250px;
+}
+
+.button-basic-weather{
+    transition: all 0.2s ease;
+    &:hover{
+        -webkit-filter: brightness(70%);
+    }
+}
+
+.separator-vertical{
+}
+
+.card-weather{
+    background-color: rgba(61, 90, 108, 0.80);
+    border: 0.2em solid rgba(61, 90, 108, 0.50);
+    font-size: 8pt;
+}
+
+.card-weather-active{
+}
+
+.location-box{
+    border: 0.2em solid #433a3f;
+}
