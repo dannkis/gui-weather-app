@@ -6,6 +6,8 @@ import Nav from "./components/nav/nav.js";
 import Home from "./pages/home/home.js";
 import Blog from "./pages/blog/blog.js";
 import FAQ from "./pages/frequently_asked_questions/frequentlyAskedQuestions.js";
+import RAL from "./pages/resources_and_learning/resourcesAndLearning.js"
+import PrevHistory from "./pages/previous_history/"
 import ErrorPage from "./pages/errorPage.js";
 
 function App() {
