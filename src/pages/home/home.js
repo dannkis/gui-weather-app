@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Nav, Dropdown } from "react-bootstrap";
+
 import "./home.scss";
 import CloudyElement from "../../media/elements/weather/cloudy.png";
 import ClearCloudyElement from "../../media/elements/weather/clear-cloudy.png";
@@ -17,7 +19,7 @@ export default function home() {
         {/* WEATHER BASIC INFO SECTION */}
         <div className="col col-sm-12 bg-primary px-4 border-30">
           <div className="row">
-            <div className="col col-md-6 d-flex justify-content-center">
+            <div className="col col-md-6 d-flex justify-content-center container-fluid">
               <div className="row w-100 bg-image-1 border-30">
                 <div className="col col-sm-12 d-flex justify-content-center text-light text-shadow-sm">
                   <p className="h4">Friday 10th February 2024 - Today</p>
@@ -32,7 +34,7 @@ export default function home() {
                     className="basic-weather-info container-fluid d-flex border-30 shadow-lg
                  border-dark-tr"
                   >
-                    <div className="row">
+                    <div className="row w-100">
                       <div className="col col-sm-12 d-flex justify-content-center text-secondary">
                         <p className="display-0 m-0 text-shadow position-relative">
                           29
@@ -138,18 +140,36 @@ export default function home() {
                     <span className="p-0">20:00</span>
                   </div>
                 </div>
-                <div className=" col col-sm-12 container-fluid text-light">
-                  <div className="row">
-                    <div className="col col-sm-1"></div>
-                    <div className="col col-sm-10 weather-insight border-30 border-dark-tr">
+                <div className="col col-sm-12 container-fluid text-light">
+                  <div className="row justify-content-center">
+                    <div className="col col-sm-10 weather-insight border-30 border-dark-tr mx-2">
                       <div className="container-fluid">
                         <div className="row">
-                          <p className="h4 location-box bg-light border-30 text-dark text-center p-2">
-                            London, United Kingdom
-                          </p>
+                          <div className="col col-sm-12 dropdown-center">
+                            <Dropdown>
+                              <Dropdown.Toggle
+                                className="location-box bg-light border-30 text-dark text-center p-2 w-100"
+                                variant="success"
+                                id="dropdown-basic"
+                              >
+                                <span className="h4">London, United Kingdom</span>
+                              </Dropdown.Toggle>
+                              <Dropdown.Menu className="d-column justify-content-center text-center dropdown-menu-dark w-100">
+                                <Dropdown.Item href="#/action-1">
+                                  Location 1
+                                </Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">
+                                  Location 2
+                                </Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">
+                                  Location 3
+                                </Dropdown.Item>
+                              </Dropdown.Menu>
+                            </Dropdown>
+                          </div>
                         </div>
                         <div className="row p-0">
-                          <div className="col col-sm-8 container-fluid">
+                          <div className="col col-sm-7 container-fluid">
                             <div className="row p-0">
                               <p>Average Temperature: 25°C</p>
                             </div>
@@ -169,7 +189,7 @@ export default function home() {
                           <div className="col col-sm-1 d-flex justify-content-center p-0 p-0 m-0">
                             <div className="vr p-1 border-30 mb-4"></div>
                           </div>
-                          <div className="col col-sm-3 d-flex justify-content-center align-items-center">
+                          <div className="col col-sm-4 d-flex justify-content-center align-items-center">
                             <div className="container-fluid p-0 ">
                               <div className="row w-100 pt-0">
                                 <div className="col col-sm-12 d-flex justify-content-center">
@@ -196,7 +216,6 @@ export default function home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col col-sm-1"></div>
                   </div>
                 </div>
               </div>
@@ -210,17 +229,25 @@ export default function home() {
           <div className="container-fluid">
             <div className="row justify-content-evenly">
               {/* LEARNING & RESOURCES LINK */}
-              <a as={Link} to="resources-and-learning" className="col col-sm-7 bg-image-6 resources-and-learning border-30 d-flex align-items-end p-0 link-unstyled">
+              <Nav.Link
+                as={Link}
+                to="/resources-and-learning"
+                className="col col-sm-7 bg-image-6 resources-and-learning border-30 d-flex align-items-end p-0 link-unstyled"
+              >
                 <div className="d-flex justify-content-center align-items-center w-100 p-5 link-section-text border-bottom-30">
                   <span>Learning & Resources</span>
                 </div>
-              </a>
+              </Nav.Link>
               {/* PREVIOUS HISTORY LINK */}
-              <a className="col col-sm-4 bg-image-7 previous-history border-30 d-flex align-items-end p-0">
+              <Nav.Link
+                as={Link}
+                to="/previous-history"
+                className="col col-sm-4 bg-image-7 previous-history border-30 d-flex align-items-end p-0"
+              >
                 <div className="d-flex justify-content-center align-items-center w-100 p-5 link-section-text border-bottom-30">
                   <span>Previous History</span>
                 </div>
-              </a>
+              </Nav.Link>
             </div>
           </div>
         </div>
