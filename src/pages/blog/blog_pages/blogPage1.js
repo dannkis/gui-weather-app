@@ -43,7 +43,9 @@ export default function blogPage1() {
     our app empowers farmers to stay one step ahead of Mother 
     Nature."
     image3={"image_here"}
-    text4="Furthermore, our Weather App serves as a powerful tool for mitigating risks on the farm. By monitoring weather patterns and identifying potential threats, such as frost events or heavy rainfall, farmers can take proactive measures to protect their crops and minimize losses. Whether it's implementing frost protection measures or adjusting planting schedules, our app empowers farmers to stay one step ahead of Mother Nature."
+    text4="Invest in Infrastructure: Investing in infrastructure can enhance weather resilience on the farm. Whether it's installing irrigation systems, building greenhouses, or implementing soil conservation practices, infrastructure improvements can help farmers mitigate the impact of extreme weather events and ensure the long-term sustainability of their operations.
+
+    In conclusion, weather resilience is essential for farmers looking to thrive in today's unpredictable climate. By staying informed, planning ahead, monitoring soil conditions, implementing pest and disease management strategies, and investing in infrastructure, farmers can build resilience and mitigate risks on the farm. With our Weather App as your trusted companion, you'll have the tools and insights you need to weather any storm and achieve greater success on the farm."
     />
   )
 }
