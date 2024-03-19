@@ -47,7 +47,7 @@ export default function Home() {
   const iconH2 = `https://openweathermap.org/img/wn/${dataHis?.list[23].weather[0].icon}@2x.png`; 
   const iconH3 = `https://openweathermap.org/img/wn/${dataHis?.list[22].weather[0].icon}@2x.png`; 
 
-  console.log(getLocation()[0])
+  console.log(getLocation())
 
   return (
     <>
