@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Dropdown } from "react-bootstrap";
 
@@ -12,7 +12,39 @@ import PrevButton from "../../media/elements/prev_day.png";
 import NextButton from "../../media/elements/next_day.png";
 import FlowerGood from "../../media/elements/flower_good.svg";
 
-export default function home() {
+import useAPI from "../../hooks/useAPI";
+import useHourly from "../../hooks/useHourly";
+import useHistory from "../../hooks/useHistory";
+function Home() {
+  const city = 'Manchester'; // this is for example, just pass your city as prop to your component
+  const { data, error } = useAPI(city);
+  const temp = parseInt(data?.main.temp);
+  const humidity = data?.main.humidity;
+  const wind = data?.wind.speed;
+  const description = data?.weather[0].main; 
+  const icon = `https://openweathermap.org/img/wn/${data?.weather[0].icon}@2x.png`;
+
+  const { dataH, errorH } = useHourly(city);
+  const time = parseInt(dataH?.list[0].dt_txt.slice(11,13));
+  const hourF1 = parseInt(dataH?.list[0].main.temp);
+  const hourF2 = parseInt(dataH?.list[1].main.temp);
+  const hourF3 = parseInt(dataH?.list[2].main.temp);
+
+  const iconF1 = `https://openweathermap.org/img/wn/${dataH?.list[0].weather[0].icon}@2x.png`; 
+  const iconF2 = `https://openweathermap.org/img/wn/${dataH?.list[1].weather[0].icon}@2x.png`; 
+  const iconF3 = `https://openweathermap.org/img/wn/${dataH?.list[2].weather[0].icon}@2x.png`; 
+
+
+  const { dataHis, errorHis } = useHistory(city);
+
+  //  const hourH1 = parseInt(dataH?.list[0].main.temp);
+  const hourH2 = parseInt(dataHis?.list[23].main.temp);
+  const hourH3 = parseInt(dataHis?.list[22].main.temp);
+
+  const iconH2 = `https://openweathermap.org/img/wn/${dataHis?.list[23].weather[0].icon}@2x.png`; 
+  const iconH3 = `https://openweathermap.org/img/wn/${dataHis?.list[22].weather[0].icon}@2x.png`; 
+
+
   return (
     <>
       <div className="row px-2 pt-0">
@@ -37,11 +69,11 @@ export default function home() {
                     <div className="row w-100">
                       <div className="col col-sm-12 d-flex justify-content-center text-secondary">
                         <p className="display-0 m-0 text-shadow position-relative">
-                          29
+                          {temp}°C
                         </p>
                       </div>
                       <div className="col col-sm-12 d-flex justify-content-center text-secondary text-center align-items-center text-shadow-sm">
-                        <p>Cloudy</p>
+                        <p>{description}</p>
                       </div>
 
                       <div className="col col-sm-12 container-fluid text-light">
@@ -50,7 +82,7 @@ export default function home() {
                             <img src={WindyElement} alt="wind" /> Wind
                           </div>
                           <div className="col col-sm-4 text-center">|</div>
-                          <div className="col col-sm-4 text-center">10KM/H</div>
+                          <div className="col col-sm-4 text-center">{wind}M/S</div>
                         </div>
                       </div>
 
@@ -60,7 +92,7 @@ export default function home() {
                             <img src={HumidityElement} alt="wind" /> Hum
                           </div>
                           <div className="col col-sm-4 text-center">|</div>
-                          <div className="col col-sm-4 text-center">54 %</div>
+                          <div className="col col-sm-4 text-center">{humidity}%</div>
                         </div>
                       </div>
                     </div>
@@ -79,15 +111,15 @@ export default function home() {
                 <div className="col col-sm-12 d-flex justify-content-around">
                   {/* CARD-WEATHER 1 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
-                    <span className="py-0">21°C</span>
-                    <img src={CloudyElement} alt="cloudy" className="p-0" />
-                    <span className="p-0">14:00</span>
+                    <span className="py-0">{hourH3}°C</span>
+                    <img src={iconH3} alt="cloudy" className="p-0" />
+                    <span className="p-0">{time-4}:00</span>
                   </div>
                   {/* CARD-WEATHER 2 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
-                    <span className="py-0">21°C</span>
-                    <img src={CloudyElement} alt="cloudy" className="p-0" />
-                    <span className="p-0">15:00</span>
+                    <span className="py-0">{hourH2}°C</span>
+                    <img src={iconH2} alt="cloudy" className="p-0" />
+                    <span className="p-0">{time-3}:00</span>
                   </div>
                   {/* CARD-WEATHER 3 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
@@ -97,47 +129,47 @@ export default function home() {
                       alt="cloudy"
                       className="p-0 overflow-hidden"
                     />
-                    <span className="p-0">16:00</span>
+                    <span className="p-0">{time-2}:00</span>
                   </div>
                   {/* ACTIVE CARD-WEATHER 4 A.K.A CURRENT HOUR ZONE */}
                   <div className="border-30 m-2 card-weather-active w-100 p-2 text-light  d-flex flex-column justify-content-center align-items-center">
-                    <span>21°C</span>
+                    <span>{temp}°C</span>
                     <img
-                      src={ClearCloudyElement}
+                      src={icon}
                       alt="cloudy"
                       className="img-fluid"
                     />
-                    <span>17:00</span>
+                    <span>{time-1}:00</span>
                   </div>
                   {/* CARD-WEATHER 5 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
-                    <span className="py-0">21°C</span>
+                    <span className="py-0">{hourF1}°C</span>
                     <img
-                      src={ClearCloudyElement}
+                      src={iconF1}
                       alt="cloudy"
                       className="p-0"
                     />
-                    <span className="p-0">18:00</span>
+                    <span className="p-0">{time}:00</span>
                   </div>
                   {/* CARD-WEATHER 6 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
-                    <span className="py-0">21°C</span>
+                    <span className="py-0">{hourF2}°C</span>
                     <img
-                      src={ClearCloudyElement}
+                      src={iconF2}
                       alt="cloudy"
                       className="p-0"
                     />
-                    <span className="p-0">19:00</span>
+                    <span className="p-0">{time+1}:00</span>
                   </div>
                   {/* CARD-WEATHER 7 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
-                    <span className="py-0">21°C</span>
+                    <span className="py-0">{hourF3}°C</span>
                     <img
-                      src={ClearCloudyElement}
+                      src={iconF3}
                       alt="cloudy"
                       className="p-0"
                     />
-                    <span className="p-0">20:00</span>
+                    <span className="p-0">{time+2}:00</span>
                   </div>
                 </div>
                 <div className="col col-sm-12 container-fluid text-light">
@@ -152,7 +184,7 @@ export default function home() {
                                 variant="success"
                                 id="dropdown-basic"
                               >
-                                <span className="h4">London, United Kingdom</span>
+                                <span className="h4">{city}</span>
                               </Dropdown.Toggle>
                               <Dropdown.Menu className="d-column justify-content-center text-center dropdown-menu-dark w-100">
                                 <Dropdown.Item href="#/action-1">
@@ -171,7 +203,7 @@ export default function home() {
                         <div className="row p-0">
                           <div className="col col-sm-7 container-fluid">
                             <div className="row p-0">
-                              <p>Average Temperature: 25°C</p>
+                              <p>Average Temperature: {temp}°</p>
                             </div>
                             <div className="row p-0">
                               <p>Volumetric Water Content (VWC): 20-40</p>
@@ -255,3 +287,5 @@ export default function home() {
     </>
   );
 }
+
+export default Home;
