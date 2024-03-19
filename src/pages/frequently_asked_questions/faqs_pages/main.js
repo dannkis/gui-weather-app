@@ -11,9 +11,7 @@ export default function () {
       </div>
       <div className="row">
         <div className="col col-sm-5 offset-sm-1 d-flex justify-content-center align-items-center">
-          Lorem ipsum dolor sit amet consectetur. Feugiat tellus lectus dolor
-          leo. Quis amet blandit viverra neque at. Iaculis varius suscipit morbi
-          faucibus rutrum.
+        Welcome to our FAQs page! Here, you'll find answers to common questions about using our app. Whether you're a farmer, gardener, or weather enthusiast, we're here to help you make the most of our features. If you can't find what you're looking for, reach out to our support team for assistance. 
         </div>
         <img className="img-fluid col col-sm-5" src={image1} />
       </div>

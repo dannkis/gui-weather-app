@@ -5,26 +5,16 @@ export default function question4() {
     <>
       <div className="row">
         <div className="col col-sm-12 d-flex justify-content-center">
-          <h1>QUESTION 4</h1>
+          <h1>Technical Support</h1>
         </div>
       </div>
       <div className="row">
         <div className="col col-sm-8 offset-sm-2 d-column justify-content-center border-30 border-dark-tr text-center p-4 bg-success">
-          <h3><strong>Lorem ipsum dolor sit amet consectetur?</strong></h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Feugiat tellus lectus dolor
-            leo. Quis amet blandit viverra neque at. Iaculis varius suscipit
-            morbi faucibus rutrum.
-          </p>
-        </div>
-        <div className="col col-sm-8 offset-sm-2 d-column justify-content-center border-30 border-dark-tr text-center p-4 mt-4">
-          <h3><strong>Lorem ipsum dolor sit amet consectetur?</strong></h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Feugiat tellus lectus dolor
-            leo. Quis amet blandit viverra neque at. Iaculis varius suscipit
-            morbi faucibus rutrum.
-          </p>
-        </div>
+            <h3><strong>How can I contact technical support if I encounter any issues with the app?</strong></h3>
+            <p>
+            You can contact our technical support team by emailing support@weatherapp.com or using the "Contact Us" form within the app. Our support team will respond to your inquiry as soon as possible.
+            </p>
+          </div>
       </div>
     </>
   );

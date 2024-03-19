@@ -51,7 +51,7 @@ export default function FrequentlyAskedQuestions() {
             href="#question-1"
             onClick={() => showQuestion(1, "#question-1")}
           >
-            Question 1?
+            Subscription and Payment
           </ListGroup.Item>
           <ListGroup.Item
             className="d-flex justify-content-center"
@@ -60,7 +60,7 @@ export default function FrequentlyAskedQuestions() {
             href="#question-2"
             onClick={() => showQuestion(2, "#question-2")}
           >
-            Question 2?
+            Account Management
           </ListGroup.Item>
           <ListGroup.Item
             className="d-flex justify-content-center"
@@ -69,7 +69,7 @@ export default function FrequentlyAskedQuestions() {
             href="#question-3"
             onClick={() => showQuestion(3, "#question-3")}
           >
-            Question 3?
+            App Usage and Navigation
           </ListGroup.Item>
           <ListGroup.Item
             className="d-flex justify-content-center"
@@ -78,7 +78,7 @@ export default function FrequentlyAskedQuestions() {
             href="#question-4"
             onClick={() => showQuestion(4, "#question-4")}
           >
-            Question 4?
+            Technical Support
           </ListGroup.Item>
           <ListGroup.Item
             className="d-flex justify-content-center"
@@ -87,7 +87,7 @@ export default function FrequentlyAskedQuestions() {
             href="#question-5"
             onClick={() => showQuestion(5, "#question-5")}
           >
-            Question 5?
+            Data Privacy and Security
           </ListGroup.Item>
         </ListGroup>
       </div>
