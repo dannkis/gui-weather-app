@@ -1,6 +1,8 @@
 import React from 'react'
 import Blog from './blogPageTemplate'
-import testImage from "../../../media/blogs/test-image.jpeg";
+import imageOne from "../../../media/blogs/blog2img1.jpg";
+import imageTwo from "../../../media/blogs/blog2img2.png";
+import imageThree from "../../../media/blogs/blog2img3.jpg";
 
 export default function blogPage1() {
   return (
@@ -18,7 +20,7 @@ export default function blogPage1() {
     wind speed and humidity levels, our app provides comprehensive 
     insights to help farmers plan and manage their operations 
     effectively."
-    image1={"image_here"}
+    image1={imageOne}
     text2="One of the key features of our Weather App is its 
     ability to offer hyper-localized forecasts, allowing farmers 
     to make decisions with confidence knowing that the information
@@ -33,7 +35,7 @@ export default function blogPage1() {
     combining weather data with soil moisture levels and other 
     agronomic factors, farmers can fine-tune their management 
     strategies to achieve optimal results."
-    image2={"image_here"}
+    image2={imageTwo}
     text3="Furthermore, our Weather App serves as a powerful 
     tool for mitigating risks on the farm. By monitoring weather 
     patterns and identifying potential threats, such as frost 
@@ -42,7 +44,7 @@ export default function blogPage1() {
     frost protection measures or adjusting planting schedules, 
     our app empowers farmers to stay one step ahead of Mother 
     Nature."
-    image3={"image_here"}
+    image3={imageThree}
     text4="Invest in Infrastructure: Investing in infrastructure can enhance weather resilience on the farm. Whether it's installing irrigation systems, building greenhouses, or implementing soil conservation practices, infrastructure improvements can help farmers mitigate the impact of extreme weather events and ensure the long-term sustainability of their operations.
 
     In conclusion, weather resilience is essential for farmers looking to thrive in today's unpredictable climate. By staying informed, planning ahead, monitoring soil conditions, implementing pest and disease management strategies, and investing in infrastructure, farmers can build resilience and mitigate risks on the farm. With our Weather App as your trusted companion, you'll have the tools and insights you need to weather any storm and achieve greater success on the farm."
