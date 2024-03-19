@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 export default function blog() {
   return (
     <>
-      <div className="row justify-content-center">
-        <div className="col-sm-8 text-center">
+      <div className="row justify-content-center text-center">
+        <h1>Blog</h1>
+        <div className="col-sm-8">
           <p>
             Welcome to our Weather App blog, your go-to resource for all things
             related to weather forecasting, agriculture, and the latest updates
