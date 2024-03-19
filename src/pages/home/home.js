@@ -15,9 +15,12 @@ import FlowerGood from "../../media/elements/flower_good.svg";
 import useAPI from "../../hooks/useAPI";
 import useHourly from "../../hooks/useHourly";
 import useHistory from "../../hooks/useHistory";
-function Home() {
+import getLocation from "../../components/location/getLocation";
+
+
+export default function Home() {
   const city = 'Manchester'; // this is for example, just pass your city as prop to your component
-  const { data, error } = useAPI(city);
+  const { data, error } = useAPI();
   const temp = parseInt(data?.main.temp);
   const humidity = data?.main.humidity;
   const wind = data?.wind.speed;
@@ -44,6 +47,7 @@ function Home() {
   const iconH2 = `https://openweathermap.org/img/wn/${dataHis?.list[23].weather[0].icon}@2x.png`; 
   const iconH3 = `https://openweathermap.org/img/wn/${dataHis?.list[22].weather[0].icon}@2x.png`; 
 
+  console.log(getLocation()[0])
 
   return (
     <>
@@ -287,5 +291,3 @@ function Home() {
     </>
   );
 }
-
-export default Home;
