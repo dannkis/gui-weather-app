@@ -149,13 +149,13 @@ export default function Home() {
                   {/* CARD-WEATHER 1 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
                     <span className="py-0">{hourH3}°C</span>
-                    <img src={iconH3} alt="cloudy" className="p-0" />
+                    <img src={iconH3} alt="cloudy" className="p-0 img-fluid" />
                     <span className="p-0">{time-4}:00</span>
                   </div>
                   {/* CARD-WEATHER 2 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
                     <span className="py-0">{hourH2}°C</span>
-                    <img src={iconH2} alt="cloudy" className="p-0" />
+                    <img src={iconH2} alt="cloudy" className="p-0 img-fluid" />
                     <span className="p-0">{time-3}:00</span>
                   </div>
                   {/* CARD-WEATHER 3 */}
@@ -164,7 +164,7 @@ export default function Home() {
                     <img
                       src={iconH1}
                       alt="cloudy"
-                      className="p-0 overflow-hidden"
+                      className="p-0 overflow-hidden img-fluid"
                     />
                     <span className="p-0">{time-2}:00</span>
                   </div>
@@ -180,11 +180,11 @@ export default function Home() {
                   </div>
                   {/* CARD-WEATHER 5 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
-                    <span className="py-0">{hourF1}°C</span>
+                    <span className="py-0 img-fluid">{hourF1}°C</span>
                     <img
                       src={iconF1}
                       alt="cloudy"
-                      className="p-0"
+                      className="p-0 img-fluid"
                     />
                     <span className="p-0">{time}:00</span>
                   </div>
@@ -194,7 +194,7 @@ export default function Home() {
                     <img
                       src={iconF2}
                       alt="cloudy"
-                      className="p-0"
+                      className="p-0 img-fluid"
                     />
                     <span className="p-0">{time+1}:00</span>
                   </div>
@@ -204,7 +204,7 @@ export default function Home() {
                     <img
                       src={iconF3}
                       alt="cloudy"
-                      className="p-0"
+                      className="p-0 img-fluid"
                     />
                     <span className="p-0">{time+2}:00</span>
                   </div>
