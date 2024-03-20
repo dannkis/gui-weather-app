@@ -15,19 +15,25 @@ import FlowerGood from "../../media/elements/flower_good.svg";
 import useAPI from "../../hooks/useAPI";
 import useHourly from "../../hooks/useHourly";
 import useHistory from "../../hooks/useHistory";
-import getLocation from "../../components/location/getLocation";
-
+import useCurrentLocation from "../../hooks/useCurrentLocation";
+import useLocationName from "../../hooks/useLocationName";
+import formatCurrentDate from "../../components/nav/useFormattedDate";
 
 export default function Home() {
-  const city = 'Manchester'; // this is for example, just pass your city as prop to your component
-  const { data, error } = useAPI();
+  const {location, errorL}= useCurrentLocation();
+  const {locationName, errorLN}= useLocationName(location?.latitude, location?.longitude);// this is for example, just pass your city as prop to your component
+  const city = locationName?.[0]?.name;
+  
+  const currentDate=formatCurrentDate();
+
+  const { data, error } = useAPI(location?.latitude, location?.longitude);
   const temp = parseInt(data?.main.temp);
   const humidity = data?.main.humidity;
   const wind = data?.wind.speed;
   const description = data?.weather[0].main; 
   const icon = `https://openweathermap.org/img/wn/${data?.weather[0].icon}@2x.png`;
 
-  const { dataH, errorH } = useHourly(city);
+  const { dataH, errorH } = useHourly(location?.latitude, location?.longitude);
   const time = parseInt(dataH?.list[0].dt_txt.slice(11,13));
   const hourF1 = parseInt(dataH?.list[0].main.temp);
   const hourF2 = parseInt(dataH?.list[1].main.temp);
@@ -38,16 +44,43 @@ export default function Home() {
   const iconF3 = `https://openweathermap.org/img/wn/${dataH?.list[2].weather[0].icon}@2x.png`; 
 
 
-  const { dataHis, errorHis } = useHistory(city);
+  const { dataHis, errorHis } = useHistory(location?.latitude, location?.longitude);
 
-  //  const hourH1 = parseInt(dataH?.list[0].main.temp);
+  const hourH1 = parseInt(dataH?.list[24].main.temp);
   const hourH2 = parseInt(dataHis?.list[23].main.temp);
   const hourH3 = parseInt(dataHis?.list[22].main.temp);
 
+  const iconH1 = `https://openweathermap.org/img/wn/${dataHis?.list[24].weather[0].icon}@2x.png`; 
   const iconH2 = `https://openweathermap.org/img/wn/${dataHis?.list[23].weather[0].icon}@2x.png`; 
   const iconH3 = `https://openweathermap.org/img/wn/${dataHis?.list[22].weather[0].icon}@2x.png`; 
 
-  console.log(getLocation())
+
+  const frosting = temp <= 0 ? "High" : (temp > 0 && temp < 4 ? "Moderate" : "Low");
+  const warningConditions = [
+    "thunderstorm with heavy rain",
+    "heavy thunderstorm",
+    "ragged thunderstorm",
+    "thunderstorm with heavy drizzle",
+    "heavy intensity drizzle",
+    "heavy intensity drizzle rain",
+    "heavy shower rain and drizzle",
+    "heavy intensity rain",
+    "very heavy rain",
+    "extreme rain",
+    "freezing rain",
+    "heavy intensity shower rain",
+    "ragged shower rain",
+    "heavy snow",
+    "sleet",
+    "shower sleet",
+    "rain and snow",
+    "shower snow",
+    "heavy shower snow",
+    "sand/dust whirls",
+    "squalls",
+    "tornado"];
+    const condition = data?.weather[0].description; 
+    const alertWarning= warningConditions.includes(condition) ? condition : "None";
 
   return (
     <>
@@ -58,7 +91,7 @@ export default function Home() {
             <div className="col col-md-6 d-flex justify-content-center container-fluid">
               <div className="row w-100 bg-image-1 border-30">
                 <div className="col col-sm-12 d-flex justify-content-center text-light text-shadow-sm">
-                  <p className="h4">Friday 10th February 2024 - Today</p>
+                  <p className="h4">{currentDate} - Today</p>
                 </div>
                 <div className="col col-sm-2 d-flex align-items-center">
                   <a className="button-basic-weather" href="#">
@@ -127,9 +160,9 @@ export default function Home() {
                   </div>
                   {/* CARD-WEATHER 3 */}
                   <div className="border-30 m-2 card-weather text-light d-flex flex-column justify-content-center align-items-center border-dark-tr">
-                    <span className="py-0">21°C</span>
+                    <span className="py-0">{hourH1}°C</span>
                     <img
-                      src={ClearCloudyElement}
+                      src={iconH1}
                       alt="cloudy"
                       className="p-0 overflow-hidden"
                     />
@@ -213,10 +246,10 @@ export default function Home() {
                               <p>Volumetric Water Content (VWC): 20-40</p>
                             </div>
                             <div className="row p-0">
-                              <p>Warnings/Alerts: None</p>
+                              <p>Warnings/Alerts: {alertWarning}</p>
                             </div>
                             <div className="row p-0">
-                              <p>Chance of Frosting: None</p>
+                              <p>Chance of Frosting: {frosting}</p>
                             </div>
                             <div className="row p-0">
                               <p>Pest Infection Level: 0%</p>
