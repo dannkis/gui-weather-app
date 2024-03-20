@@ -19,7 +19,7 @@ const useAPI = (lat, lon) => {
         fetchData();
     }, [lat, lon]); 
     console.log(data);
-    return { data, error };
+    return data;
 };
 
 export default useAPI;

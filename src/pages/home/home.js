@@ -14,14 +14,19 @@ import useHistory from "../../hooks/useHistory";
 import useCurrentLocation from "../../hooks/useCurrentLocation";
 import useLocationName from "../../hooks/useLocationName";
 import formatCurrentDate from "../../components/nav/useFormattedDate";
+import useCityAPI from "../../hooks/useCityAPI";
 
 export default function Home() {
   const { location, errorL } = useCurrentLocation();
+  console.log("Current Location", useCurrentLocation());
   const { locationName, errorLN } = useLocationName(
     location?.latitude,
     location?.longitude
   ); // this is for example, just pass your city as prop to your component
 
+  console.log("Location Name: ", locationName);
+  console.log("location?.latitude", location?.latitude)
+  const [currentLocationUsed, setCurrentLocationUsed] = useState(true)
   const [city, setCity] = useState(locationName?.[0]?.name);
 
   useEffect(() => {
@@ -30,12 +35,15 @@ export default function Home() {
 
   const resetCity = () => {
     setCity(locationName?.[0]?.name); // Set it to the default value
+    setCurrentLocationUsed(true);
   };
 
   const currentDate = formatCurrentDate();
 
-  const { data, error } = useAPI(location?.latitude, location?.longitude);
-  const temp = parseInt(data?.main.temp);
+  const data = useAPI(location?.latitude, location?.longitude);
+  console.log(city);
+  console.log(useCityAPI(city)[0].lat, useCityAPI(city)[0].lon);
+ const temp = 20;
   const humidity = data?.main.humidity;
   const wind = data?.wind.speed;
   const description = data?.weather[0].main;
@@ -238,7 +246,7 @@ export default function Home() {
                                   Current
                                 </Dropdown.Item>
                                 <Dropdown.Item
-                                  onClick={() => setCity("Manchester")}
+                                  onClick={() => {setCity("Manchester");setCurrentLocationUsed(false);}}
                                 >
                                   Manchester
                                 </Dropdown.Item>
