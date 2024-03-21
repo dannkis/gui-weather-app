@@ -12,13 +12,13 @@ export default function question5() {
         <div className="col col-sm-8 offset-sm-2 d-column justify-content-center border-30 border-dark-tr text-center p-4 bg-success">
             <h3><strong>How is my personal data protected within the app?</strong></h3>
             <p>
-            We take data privacy and security seriously and have implemented measures to protect your personal information from unauthorized access, use, or disclosure. Your data is encrypted and stored securely on our servers.
+            We take data privacy and security seriously and have implemented measures to protect your personal information from unauthorised access, use, or disclosure. Your data is encrypted and stored securely on our servers.
             </p>
           </div>
           <div className="col col-sm-8 offset-sm-2 d-column justify-content-center border-30 border-dark-tr text-center p-4 mt-4">
             <h3><strong>Does the app collect any information about my usage or location, and if so, how is it used?</strong></h3>
             <p>
-            The app may collect anonymous usage data and location information to improve the user experience and provide personalized features, such as local weather forecasts. Your data is anonymized and aggregated to protect your privacy.
+            The app may collect anonymous usage data and location information to improve the user experience and provide personalised features, such as local weather forecasts. Your data is anonymous to protect your privacy.
             </p>
           </div>
           <div className="col col-sm-8 offset-sm-2 d-column justify-content-center border-30 border-dark-tr text-center p-4 mt-4 bg-success">
