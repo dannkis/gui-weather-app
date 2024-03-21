@@ -8,46 +8,13 @@ export default function blogPage1() {
   return (
     <Blog
     title=" Unlocking the Power of Weather Data: How Our App Can Revolutionize Your Farming Practices"
-    text1="In today's rapidly evolving agricultural landscape, 
-    staying ahead of the curve is essential for farmers striving 
-    for success. One of the most powerful tools at their disposal? 
-    Weather data. Understanding how weather patterns impact crop growth, 
-    soil conditions, and pest activity is crucial for making informed 
-    decisions on the farm. That's where our Weather App comes in.
-    With our app, farmers gain access to a wealth of real-time 
-    weather information tailored specifically to their location 
-    and crops. From temperature and precipitation forecasts to 
-    wind speed and humidity levels, our app provides comprehensive 
-    insights to help farmers plan and manage their operations 
-    effectively."
+    text1="Todays agricultural landscape is always changing and in order to run a successful farm farmers need to stay ahead of the curve and be willing to adapt. Thankfully, one of the most powerful tools a farmer can use is weather data, can be easily accessed through our app. With information provided ranging from soil moisture levels to extreme weather conditions our app can be used to make crucial decisions on the farm"
     image1={imageOne}
-    text2="One of the key features of our Weather App is its 
-    ability to offer hyper-localized forecasts, allowing farmers 
-    to make decisions with confidence knowing that the information
-    they're receiving is accurate and relevant to their specific
-    area. Whether it's deciding when to plant, irrigate, or harvest,
-    having access to precise weather data can make all the 
-    difference in maximizing yields and minimizing risks.
-    But our app goes beyond just providing weather forecasts. 
-    It also offers valuable insights into soil conditions, 
-    helping farmers optimize their irrigation and fertilization 
-    practices for maximum efficiency and sustainability. By 
-    combining weather data with soil moisture levels and other 
-    agronomic factors, farmers can fine-tune their management 
-    strategies to achieve optimal results."
+    text2="One of the key features of our app is its ability to offer localised weather forecasts allowing farmers to make decisions with confidence knowing that the weather data they are receiving is accurate and about their specific location. However our app goes beyond providing weather insights, it also provides valuable insight into a range of weather related factors that can help farmers with making decisions on irrigation, fertilization and harvesting. Our app can help optimize costs, sustainability and yield allowing farmers to achieve optimal results."
     image2={imageTwo}
-    text3="Furthermore, our Weather App serves as a powerful 
-    tool for mitigating risks on the farm. By monitoring weather 
-    patterns and identifying potential threats, such as frost 
-    events or heavy rainfall, farmers can take proactive measures 
-    to protect their crops and minimize losses. Whether it's 
-    frost protection measures or adjusting planting schedules, 
-    our app empowers farmers to stay one step ahead of Mother 
-    Nature."
+    text3="Furthermore, our weather app serves as a powerful tool for mitigating risks on the farm. By monitoring weather patterns, identifying potential extreme weather and alerting out farmers, It allows our farmers to take a more proactive approach to their work. It allows them to plan ahead to schedule and it also allows them to mitigate risks as much as possible"
     image3={imageThree}
-    text4="Invest in Infrastructure: Investing in infrastructure can enhance weather resilience on the farm. Whether it's installing irrigation systems, building greenhouses, or implementing soil conservation practices, infrastructure improvements can help farmers mitigate the impact of extreme weather events and ensure the long-term sustainability of their operations.
-
-    In conclusion, weather resilience is essential for farmers looking to thrive in today's unpredictable climate. By staying informed, planning ahead, monitoring soil conditions, implementing pest and disease management strategies, and investing in infrastructure, farmers can build resilience and mitigate risks on the farm. With our Weather App as your trusted companion, you'll have the tools and insights you need to weather any storm and achieve greater success on the farm."
+    text4="Our final tip for today is for farmers to invest in infrastructure. Using our app farmers will be able to gain insights into weather trends in their specific location. This will allow them to make more informed decisions when investing in infrastructure. For example if our app shows that the weather conditions in a certain area tend to be dry and hot a farmer might then decide to invest in an irrigation system to make sure their crops are getting the water and nutrients they need. In conclusion, in order to thrive in today’s unpredictable climate farmers need to be well informed and our app helps keep our farmers ahead of the curve."
     />
   )
 }

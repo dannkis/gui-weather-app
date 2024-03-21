@@ -22,10 +22,9 @@ export default function blog() {
           <div class="card text-center h-100 d-flex">
             <div class="card-header">Article</div>
             <div class="card-body d-flex flex-column align-items-center justify-content-center pb-0">
-              <h5 class="card-title">Special title treatment</h5>
+              <h5 class="card-title">Mastering Crop Management with Precision Weather Insights</h5>
               <p class="card-text">
-                Mastering Crop Management with Precision Weather Insights: A
-                Guide for Farmers
+                A farmers guide to crop management
               </p>
               <Link to="/Blog-0" class="btn btn-primary">
                 Read
@@ -40,10 +39,10 @@ export default function blog() {
           <div class="card text-center">
             <div class="card-header">Article</div>
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
+              <h5 class="card-title">Unlocking the Power of Weather Data: How Our App Can
+                Revolutionize Your Farming Practices</h5>
               <p class="card-text">
-                Unlocking the Power of Weather Data: How Our App Can
-                Revolutionize Your Farming Practices
+                How to optimize farming practices using weather data
               </p>
               <Link to="/Blog-1" class="btn btn-primary">
                 Read
@@ -58,10 +57,10 @@ export default function blog() {
           <div class="card text-center h-100">
             <div class="card-header">Article</div>
             <div class="card-body d-flex flex-column align-items-center justify-content-center pb-0">
-              <h5 class="card-title">Special title treatment</h5>
+              <h5 class="card-title">Weather Resilience 101: Tips and Strategies for Mitigating Risks
+                on Your Farm</h5>
               <p class="card-text">
-                Weather Resilience 101: Tips and Strategies for Mitigating Risks
-                on Your Farm
+                Tips and tricks to make your farm weather resilient
               </p>
               <Link to="/Blog-2" class="btn btn-primary">
                 Read
