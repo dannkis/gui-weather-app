@@ -18,6 +18,7 @@ const useLocationName = (lat, lon) => {
         };
         fetchData();
     }, [lat, lon]); 
+
     return {locationName , errorLN };
 };
 

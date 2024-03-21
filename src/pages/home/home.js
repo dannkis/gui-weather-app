@@ -17,16 +17,16 @@ import formatCurrentDate from "../../components/nav/useFormattedDate";
 
 export default function Home() {
   const { location, errorL } = useCurrentLocation();
-  const { locationName, errorLN } = useLocationName(
-    location?.latitude,
-    location?.longitude
-  ); // this is for example, just pass your city as prop to your component
-
+  const { locationName, errorLN } = useLocationName(location?.latitude, location?.longitude); // this is for example, just pass your city as prop to your component
   const [city, setCity] = useState(locationName?.[0]?.name);
 
-  useEffect(() => {
-    setCity(locationName?.[0]?.name);
-  }, [locationName]);
+  console.log("LOCATION NAME: ", locationName?.[0]?.name);
+
+  useEffect(
+    () => {
+      setCity(locationName?.[0]?.name);
+    },
+    [locationName] );
 
   const resetCity = () => {
     setCity(locationName?.[0]?.name); // Set it to the default value
@@ -35,6 +35,7 @@ export default function Home() {
   const currentDate = formatCurrentDate();
 
   const { data, error } = useAPI(location?.latitude, location?.longitude);
+
   const temp = parseInt(data?.main.temp);
   const humidity = data?.main.humidity;
   const wind = data?.wind.speed;
@@ -238,7 +239,9 @@ export default function Home() {
                                   Current
                                 </Dropdown.Item>
                                 <Dropdown.Item
-                                  onClick={() => setCity("Manchester")}
+                                  onClick={() => {
+                                    setCity("Manchester");
+                                  }}
                                 >
                                   Manchester
                                 </Dropdown.Item>
