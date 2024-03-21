@@ -18,7 +18,7 @@ const useHistory = (lat, lon) => {
         };
         fetchData();
     }, [lat, lon, currentEpochTime]); 
-    console.log(dataHis);
+    console.log("DATA HIS", dataHis);
     return { dataHis, errorHis };
 };
 export default useHistory;

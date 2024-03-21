@@ -17,16 +17,17 @@ import formatCurrentDate from "../../components/nav/useFormattedDate";
 
 export default function Home() {
   const { location, errorL } = useCurrentLocation();
-  const { locationName, errorLN } = useLocationName(location?.latitude, location?.longitude); // this is for example, just pass your city as prop to your component
+  const { locationName, errorLN } = useLocationName(
+    location?.latitude,
+    location?.longitude
+  ); // this is for example, just pass your city as prop to your component
   const [city, setCity] = useState(locationName?.[0]?.name);
 
   console.log("LOCATION NAME: ", locationName?.[0]?.name);
 
-  useEffect(
-    () => {
-      setCity(locationName?.[0]?.name);
-    },
-    [locationName] );
+  useEffect(() => {
+    setCity(locationName?.[0]?.name);
+  }, [locationName]);
 
   const resetCity = () => {
     setCity(locationName?.[0]?.name); // Set it to the default value
