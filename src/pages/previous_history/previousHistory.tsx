@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GetData from "./GetData.js";
 import GetDate from "../../components/GetDate.js";
 import useHistoryChart from "../../hooks/useHistoryChart.js";
+import useLocationName from "../../hooks/useLocationName.js";
 
 import {
   Chart as ChartJS,
@@ -14,6 +15,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import useCurrentLocation from "../../hooks/useCurrentLocation.js";
 
 ChartJS.register(
   CategoryScale,
@@ -25,7 +27,7 @@ ChartJS.register(
   Legend
 );
 
-export default function previousHistory() {
+export default function PreviousHistory() {
   const labels = [
     GetDate(6),
     GetDate(5),
@@ -71,8 +73,21 @@ export default function previousHistory() {
     ],
   };
 
+  const { location, errorL } = useCurrentLocation();
+  const { locationName, errorLN } = useLocationName(
+    location?.latitude,
+    location?.longitude
+  );
+
+  const cityName = locationName?.[0]?.name;
+
   return (
     <>
+      <div className="row text-center">
+        <div className="col-sm-12">
+          <h1>{cityName}</h1>
+        </div>
+      </div>
       <div className="row justify-content-center">
         <div className="col col-sm-8">
           <Line options={options} data={data} />
