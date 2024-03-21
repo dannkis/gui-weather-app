@@ -16,6 +16,7 @@ import useLocationName from "../../hooks/useLocationName";
 import formatCurrentDate from "../../components/nav/useFormattedDate";
 
 export default function Home() {
+  //apis for the location
   const { location, errorL } = useCurrentLocation();
   const { locationName, errorLN } = useLocationName(
     location?.latitude,
@@ -35,37 +36,45 @@ export default function Home() {
 
   const currentDate = formatCurrentDate();
 
+  //weather api
   const { data, error } = useAPI(location?.latitude, location?.longitude);
 
+  //various weather informaiton
   const temp = parseInt(data?.main.temp);
   const humidity = data?.main.humidity;
   const wind = data?.wind.speed;
   const description = data?.weather[0].main;
   const icon = `https://openweathermap.org/img/wn/${data?.weather[0].icon}@2x.png`;
 
+  //using the hourly forecast
   const { dataH, errorH } = useHourly(location?.latitude, location?.longitude);
   const time = parseInt(dataH?.list[0].dt_txt.slice(11, 13));
   const hourF1 = parseInt(dataH?.list[0].main.temp);
   const hourF2 = parseInt(dataH?.list[1].main.temp);
   const hourF3 = parseInt(dataH?.list[2].main.temp);
 
+  //icons for the furture hours
   const iconF1 = `https://openweathermap.org/img/wn/${dataH?.list[0].weather[0].icon}@2x.png`;
   const iconF2 = `https://openweathermap.org/img/wn/${dataH?.list[1].weather[0].icon}@2x.png`;
   const iconF3 = `https://openweathermap.org/img/wn/${dataH?.list[2].weather[0].icon}@2x.png`;
 
+  // using the api for hours before
   const { dataHis, errorHis } = useHistory(
     location?.latitude,
     location?.longitude
   );
 
+  // temps for the hours before the current one
   const hourH1 = parseInt(dataH?.list[24].main.temp);
   const hourH2 = parseInt(dataHis?.list[23].main.temp);
   const hourH3 = parseInt(dataHis?.list[22].main.temp);
 
+  //icons for the hours before the current one
   const iconH1 = `https://openweathermap.org/img/wn/${dataHis?.list[24].weather[0].icon}@2x.png`;
   const iconH2 = `https://openweathermap.org/img/wn/${dataHis?.list[23].weather[0].icon}@2x.png`;
   const iconH3 = `https://openweathermap.org/img/wn/${dataHis?.list[22].weather[0].icon}@2x.png`;
 
+  // differnet features for farmers
   const frosting =
     temp <= 0 ? "High" : temp > 0 && temp < 4 ? "Moderate" : "Low";
   const warningConditions = [
