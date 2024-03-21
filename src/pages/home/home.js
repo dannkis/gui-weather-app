@@ -13,7 +13,7 @@ import useHourly from "../../hooks/useHourly";
 import useHistory from "../../hooks/useHistory";
 import useCurrentLocation from "../../hooks/useCurrentLocation";
 import useLocationName from "../../hooks/useLocationName";
-import formatCurrentDate from "../../components/nav/useFormattedDate";
+import formatCurrentDate from "../../hooks/useFormattedDate";
 
 export default function Home() {
   //apis for the location
@@ -116,7 +116,8 @@ export default function Home() {
   const alertWarningPercentage = alertWarning == "None" ? 20 : 0;
   const frostingPercentage = temp <= 0 ? 0 : temp > 0 && temp < 4 ? 10 : 20;
   const pestInfectionPercentage = pestInfection <= 10 ? 20 : 0;
-
+  
+  // Calculate percentage based on various factors
   const overallPecentage =
     tempPercentage +
     vwcPercentage +

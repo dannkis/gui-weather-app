@@ -12,7 +12,10 @@ import Blog0 from "./pages/blog/blog_pages/blogPage0";
 import Blog1 from "./pages/blog/blog_pages/blogPage1";
 import Blog2 from "./pages/blog/blog_pages/blogPage2";
 import ErrorPage from "./pages/errorPage.js";
-
+/**
+ * Main App Component
+ * Renders the main application layout using React Router for navigation
+ */
 function App() {
   return (
     <div className="container-fluid">

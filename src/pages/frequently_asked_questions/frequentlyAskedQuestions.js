@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import { ListGroup } from "react-bootstrap";
 import mainPage from "./faqs_pages/main.js";
 
+/**
+ * Frequently Asked Questions Component
+ * Renders a list of frequently asked questions with corresponding answers
+ */
 export default function FrequentlyAskedQuestions() {
+  // State to manage the selected question and active key
   const [selectedQuestion, setSelectedQuestion] = useState(mainPage);
   const [activeKey, setActiveKey] = useState("#main");
 
+  // Function to show the selected question based on index and key
   const showQuestion = (index, key) => {
-
+    // Array of question components
     const questions = [
       require("./faqs_pages/main.js"),
       require("./faqs_pages/question1.js"),
@@ -17,8 +23,11 @@ export default function FrequentlyAskedQuestions() {
       require("./faqs_pages/question5.js")
     ];
 
+    // Check if index is valid
     if (index >= 0 && index < questions.length) {
+      // Get the selected question component
       const QuestionComponent = questions[index].default;
+      // Set the selected question component and active key
       setSelectedQuestion(<QuestionComponent />);
       setActiveKey(key);
     } else {
@@ -28,13 +37,16 @@ export default function FrequentlyAskedQuestions() {
 
   return (
     <>
+      {/* Render the selected question */}
       {selectedQuestion}
 
+      {/* Render the list of questions */}
       <div className="row px-2 pt-0">
         <ListGroup
           className="col col-sm-10 offset-sm-1 d-flex justify-content-center px-4 border-30 text-light"
           defaultActiveKey={activeKey}
         >
+          {/* Main FAQs */}
           <ListGroup.Item
             className="d-flex justify-content-center"
             variant="secondary"
@@ -44,6 +56,7 @@ export default function FrequentlyAskedQuestions() {
           >
             FAQs
           </ListGroup.Item>
+          {/* Subscription and Payment */}
           <ListGroup.Item
             className="d-flex justify-content-center"
             variant="secondary"
@@ -53,6 +66,7 @@ export default function FrequentlyAskedQuestions() {
           >
             Subscription and Payment
           </ListGroup.Item>
+          {/* Account Management */}
           <ListGroup.Item
             className="d-flex justify-content-center"
             variant="secondary"
@@ -62,6 +76,7 @@ export default function FrequentlyAskedQuestions() {
           >
             Account Management
           </ListGroup.Item>
+          {/* App Usage and Navigation */}
           <ListGroup.Item
             className="d-flex justify-content-center"
             variant="secondary"
@@ -71,6 +86,7 @@ export default function FrequentlyAskedQuestions() {
           >
             App Usage and Navigation
           </ListGroup.Item>
+          {/* Technical Support */}
           <ListGroup.Item
             className="d-flex justify-content-center"
             variant="secondary"
@@ -80,6 +96,7 @@ export default function FrequentlyAskedQuestions() {
           >
             Technical Support
           </ListGroup.Item>
+          {/* Data Privacy and Security */}
           <ListGroup.Item
             className="d-flex justify-content-center"
             variant="secondary"

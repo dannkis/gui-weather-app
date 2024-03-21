@@ -1,5 +1,9 @@
 import React from "react";
-
+/**
+ * Blog Page Template Component
+ * Renders a template for individual blog pages with title, text, and images
+ * @param {object} props - Props containing title, text1, image1, text2, image2, text3, image3, text4
+ */
 export default function blogPageTemplate({title, text1, image1, text2, image2, text3, image3, text4}) {
   return (
     <>

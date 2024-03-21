@@ -1,61 +1,74 @@
+// Import Google Fonts - Overpass
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
 
+// Global styling
 * {
-  font-family: "Overpass", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: bold;
-  font-style: normal;
+  font-family: "Overpass", sans-serif; /* Apply Overpass font to all elements */
+  font-optical-sizing: auto; /* Set font optical sizing to auto */
+  font-weight: bold; /* Set font weight to bold */
+  font-style: normal; /* Set font style to normal */
 }
 
+// Custom border radius classes
 .border-30 {
-  border-radius: 30px;
+  border-radius: 30px; /* Apply 30px border radius */
 }
 
 .border-bottom-30 {
-  border-radius: 0px 0px 30px 30px;
+  border-radius: 0px 0px 30px 30px; /* Apply 30px border radius to bottom corners */
 }
 
+// Custom border style class
 .border-dark-tr{
-  border: 0.2em solid rgba(67, 58, 63, 0.4);
+  border: 0.2em solid rgba(67, 58, 63, 0.4); /* Apply dark transparent border */
 }
 
+// Custom image shadow class
 .img-shadow {
-  filter: drop-shadow(0px 0px 2px #8de969);
+  filter: drop-shadow(0px 0px 2px #8de969); /* Apply drop shadow effect */
 }
 
+// Custom width classes
 .w-80{
-  width: 80%;
+  width: 80%; /* Set width to 80% */
 }
 
 .w-90{
-  width: 90%;
+  width: 90%; /* Set width to 90% */
 }
 
+// Custom height class
 .h-80{
-  height: 80%;
+  height: 80%; /* Set height to 80% */
 }
 
+// Custom display font size class
 .display-0{
-  font-size: 84pt;
+  font-size: 84pt; /* Set font size to 84pt */
 }
 
+// Custom text shadow class
 .text-shadow {
-  text-shadow: 0px 0px 5px;
+  text-shadow: 0px 0px 5px; /* Apply text shadow with 5px blur */
 }
 
+// Custom small text shadow class
 .text-shadow-sm {
-  text-shadow: 0px 0px 1px;
+  text-shadow: 0px 0px 1px; /* Apply small text shadow with 1px blur */
 }
 
+// Custom text underlined class
 .text-underlined {
-  text-decoration: underline;
+  text-decoration: underline; /* Underline text */
 }
 
+// Custom row padding
 .row {
-  padding: 1em 0;
+  padding: 1em 0; /* Apply 1em padding to top and bottom */
 }
 
+// Custom text justification
 .text-justify{
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: justify; /* Justify text */
+  text-justify: inter-word; /* Set inter-word justification */
 }

@@ -1,6 +1,9 @@
 import React from "react";
 import image1 from "../../../media/images/faq/image-1.png";
-
+/**
+ * FAQ main page component
+ * Renders the main page content for FAQs
+ */
 export default function () {
   return (
     <>

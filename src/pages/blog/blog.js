@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Blog Component
+ * Renders a list of blog articles with links to read more
+ */
 export default function blog() {
   return (
     <>

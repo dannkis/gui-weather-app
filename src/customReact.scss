@@ -1,7 +1,9 @@
+// Define custom color variables
 $primary: #3d5a6c;
 $secondary: #8de969;
 $success: #cbef43;
 $dark: #433a3f;
 $light: #FFFFFF;
 
+// Import Bootstrap SCSS file
 @import '~bootstrap/scss/bootstrap.scss';

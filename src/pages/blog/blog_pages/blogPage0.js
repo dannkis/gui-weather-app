@@ -3,8 +3,10 @@ import Blog from "./blogPageTemplate";
 import imageOne from "../../../media/blogs/blog1img1.jpg";
 import imageTwo from "../../../media/blogs/blog1img2.jpg";
 import imageThree from "../../../media/blogs/blog1img3.jpg";
-
-
+/**
+ * Blog Page 0 Component
+ * Renders the content for the first blog page
+ */
 
 export default function blogPage0() {
   return (

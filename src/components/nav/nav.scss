@@ -1,25 +1,29 @@
+/* Styling for navigation buttons */
 .button-nav {
-  border-style: solid;
-  border-width: 0.2em;
-  border-radius: 50px;
-  transition: all 0.2s ease;
-}
-
-.button-faq{
-    border-color: #8de969;
-    color: #8de969;
-    &:hover{
-        border-color: #406831;
-        color: #406831;
+    border-style: solid; /* Set border style */
+    border-width: 0.2em; /* Set border width */
+    border-radius: 50px; /* Apply border radius for rounded corners */
+    transition: all 0.2s ease; /* Add transition effect for smooth hover */
+  }
+  
+  /* Styling for FAQ button */
+  .button-faq {
+    border-color: #8de969; /* Set border color */
+    color: #8de969; /* Set text color */
+    &:hover {
+      border-color: #406831; /* Change border color on hover */
+      color: #406831; /* Change text color on hover */
     }
-}
-
-.button-contact{
-    border-color: #433a3f;
-    background-color: #433a3f;
-    color: #FFFFFF;
-    &:hover{
-        background-color: #000000;
-        border-color: #000000;
+  }
+  
+  /* Styling for Contact Us button */
+  .button-contact {
+    border-color: #433a3f; /* Set border color */
+    background-color: #433a3f; /* Set background color */
+    color: #FFFFFF; /* Set text color */
+    &:hover {
+      background-color: #000000; /* Change background color on hover */
+      border-color: #000000; /* Change border color on hover */
     }
-}
+  }
+  

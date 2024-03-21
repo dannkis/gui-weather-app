@@ -1,5 +1,8 @@
 import React from "react";
-
+/**
+ * FAQ question 3 component
+ * Renders the content for the third question in the FAQ section related to Subscription and Payment
+ */
 export default function question3() {
   return (
     <>
